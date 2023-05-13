@@ -12,19 +12,28 @@ const sendMsgTg = (text) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', `https://api.telegram.org/${botName}:${botToken}/sendMessage?chat_id=${chatId}&text=${text}`);
     xhr.send();
-}
+};
+
+const sendMsgPhoneTg = (phone, text) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `https://api.telegram.org/${botName}:${botToken}/sendMessage?chat_id=${chatId}&text=${phone} - ${text}`);
+    xhr.send();
+};
+
+const checkQueryParam = (param) => (param === undefined || param === '') ? false : true;
 
 app.get('/', (req, res) => {
     const text = req.query.text;
+    const phone = req.query.phone;
 
-    let responseText;
-    if (text === undefined) {
-        responseText = "Request without 'text' params";
-    } else if (text === '' ) {
-        responseText = "Request inset value for 'text' params";
-    } else {
+    if (checkQueryParam(text)) {
+        if (checkQueryParam(phone))
+            sendMsgPhoneTg(phone, text);
+        else
+            sendMsgTg(text);
         responseText = 'Request has been processed';
-        sendMsgTg(text);
+    } else {
+        responseText = 'Request has invalid value params';
     }
 
     console.log(responseText);
