@@ -2,7 +2,7 @@ const express = require('express')
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const app = express()
-const port = 3000
+const port = 80
 
 const botName = 'bot6222494632';
 const botToken = 'AAG1I5npTLlqo3cl_4jgredo_ptBjHd2ajw';
