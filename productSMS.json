@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "821aebc9-7982-4867-8f61-924912fd3c86",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23318604"
+	},
+	"item": [
+		{
+			"name": "gateway",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "telegram",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
