@@ -39,8 +39,14 @@
 7. Добавиться в группу Product SMS
 
 #### Для поддержки:
-Хостинг на Dynamic Update Client NoIP - http://nikit34.onthewifi.com/
+- Хостинг на Dynamic Update Client NoIP - http://nikit34.onthewifi.com/
 
-С вопросами обращаться к @nikit34 - tg
+- С вопросами обращаться к @nikit34 - tg
 
-Коллекция запросов для отладки `productSMS.json`
+- Коллекция запросов для отладки `gateway_debug.json`
+
+- Для развертывания:
+```
+docker build --tag 'gateway_sms_tg' .
+docker run -p 80:80 --detach 'gateway_sms_tg'
+```
