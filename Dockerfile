@@ -4,5 +4,6 @@ COPY . /app
 WORKDIR /app
 
 EXPOSE 80/tcp
+EXPOSE 22
 
-CMD ["node", "gateway.js"]
+ENTRYPOINT ["node", "gateway.js"]
